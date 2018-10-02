@@ -1,0 +1,278 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>CPSC 8310 - Researcher Profile</title>
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/solarized.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<div class="slides">
+				<section>
+					<h1>Hello</h1>
+					<p> I'm Arockia Richard Raj Manohar</p>
+				</section>
+
+				<section>
+					<h2>Dr. Scott Klemmer</h2>
+					<section>
+						<img data-src="assets/dr_scott.jpg" width="500px" height="500px" style="margin-top:10%;" alt="Down arrow" />
+					</section>
+					<section>
+						<h6>Education</h6>
+						<ul>
+							<li>University of California, Berkeley · PhD in Computer Science, 2004</li>
+							<li>University of California, Berkeley · MS in Computer Science, 2001</li>
+							<li>Brown University · Dual BA w/honors in Art-Semiotics & Computer Science <br />Graphic Design coursework at the Rhode Island School of Design, 1999</li>
+						</ul>
+					</section>
+					<section>
+							<h6>Current Positions</h6>
+							<ul>
+								<li>UC San Diego · Professor, Cognitive Science and Computer Science & Engineering, 2017 - Present</li>
+								<li>San Diego · Associate Professor, Cognitive Science and Computer Science & Engineering, 2013 - 2017</li>
+								<li>UC San Diego Design Lab Co-Founder & Co-Director, 2014 - Present</li>
+							</ul>
+					</section>
+					<section>
+							<h6>Previous Positions</h6>
+							<ul>
+								<li>Stanford University · Visiting Associate Professor, Computer Science, 2013 - 2015</li>
+								<li>Stanford University · Associate Professor & Bredt Faculty Scholar Development Chair, Computer Science, 2011 - 2013</li>
+								<li>Stanford University · Assistant Professor, Computer Science, 2004 - 2011</li>
+							</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Asides</h2>
+						<p>Tools and Formats</p>
+					</section>
+					<section>
+						<h2>Chrome Developer Tool</h2>
+						<p>Great for debugging, monitoring and tesing out anything web.</p>
+					</section>
+					<section>
+						<h2>XML</h2>
+						<p>EXtensible Markup Language.</p>
+						<p>designed to describe data.</p>
+						<p>Transsport data over the web.</p>
+						<a href="assets/test.xml" target="_blank">Sample</a>
+					</section>
+					<section>
+						<h2>JSON</h2>
+						<p>JavaScript Object Notation.</p>
+						<p>syntax for storing and exchanging data.</p>
+						<p>easier-to-use alternative to XML - better parsing, clean ... </p>
+						<a href="assets/test.json" target="_blank">Sample</a>
+					</section>
+				</section>
+				<section>
+					<h1>AJAX</h1>
+				</section>
+				<section>
+					<h2>Agenda</h2>
+					<ul>
+						<li>The Client Server Model</li>
+						<li>The Asynchronous Model</li>
+						<li>Callbacks</li>
+						<li>AJAX</li>
+						<li>Demos - Twitter</li>
+						<li>The XMLHttpRequest Object</li>
+						<li>Simple Example - Football Score</li>
+						<li>Advanced</li>
+					</ul>
+				</section>
+				<section>
+					<h2>The Client Server Model</h2>
+					<section>
+						<img data-src="assets/cs.png" alt="Down arrow" />
+						<small>http://www.tankonyvtar.hu/en/tartalom/tamop425/0027_ADW1/ch01s02.html</small>
+					</section>
+					<section>
+						<ul>
+							<li>Wait till we get a response</li>
+							<li>We are worried more about the data</li>
+							<li>Response - HTML, CSS, JS, ...</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<h2>The Asynchronous Model</h2>
+					<section>
+						<img data-src="assets/ajax.png" alt="Down arrow" />
+						<small>http://stackoverflow.com/questions/25256302/rails-4-testing-out-ajax-click-and-load</small>
+					</section>
+					<section>
+						<ul>
+							<li>View is not affected by the response</li>
+							<li>Same HTML - Only data changes</li>
+							<li>Response - XML, JSON, Text ...</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<h2>We have seen Async before !</h2>
+					<p class="fragment">JavaScript Event Handling</p>
+					<pre><code class="fragment" data-trim>
+										setTimeout(function() {
+					console.log( "c" )
+				}, 500 );
+				});
+									  </code></pre>
+				</section>
+				<section>
+					<h2>Callbacks</h2>
+					<li>Functions that are passed into other functions to be executed by those functions whenever they want</li>
+					<pre><code class="fragment" data-trim>
+									  document.addEventListener("click", function(){
+				document.getElementById("demo").innerHTML = "Hello World";
+			});
+									  </code></pre>
+				</section>
+				<section>
+					<h2>Aysnchronous (JS) = Events + Callbacks</h2>
+				</section>
+				<section>
+					<h2>AJAX</h2>
+					<ul>
+						<li>Not - language;</li>
+						<li>Not - Tool;</li>
+						<li>Not - Library;</li>
+						<li><strong>Technique</strong> that uses inter related technologies</li>
+					</ul>
+				</section>
+				<section>
+					<ul>
+						<li class="fragment">javascript, dom, xml, html, css etc.</li>
+						<li class="fragment">AJAX allows you to send and receive data asynchronously without reloading the web page.</li>
+						<li class="fragment">When can we use it ? - Real Time Data </li>
+					</ul>
+				</section>
+				<section>
+					<h2>AJAX in Action</h2>
+					<h2>Demos - Twitter</h2>
+				</section>
+				<section>
+					<h2>The XMLHttpRequest Object</h2>
+					<small> - The only thing you have to remember</small>
+					<ul>
+						<li>API that provides client functionality for transferring data between a client and a server</li>
+						<li>provides an easy way to retrieve data from a URL without having to do a full page refresh</li>
+						<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest" target="_blank">The API</a></li>
+					</ul>
+				</section>
+				<section>
+					<h2>Steps</h2>
+					<ul>
+						<li class="fragment">Create an XMLHttpRequest instance</li>
+						<li class="fragment">Open a connection</li>
+						<li class="fragment">Send the request</li>
+						<li class="fragment">Wait for the response to change (Aysnc - Event and Callback) using onnreadystatechange</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Simple Example - Football Score</h2>
+				</section>
+				<section>
+					<h2>Why AJAX ?</h2>
+					<p class="fragment">Asynchronous</p>
+					<p class="fragment">JavaScript</p>
+					<p class="fragment">and</p>
+					<p class="fragment">XML<span class="fragment">(Not really)</span></p>
+				</section>
+				<section>
+					<h2>Advanced</h2>
+					<ul>
+						<li>AJAX POST</li>
+						<li>JSONP</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Questions ?</h2>
+				</section>
+				<section>
+					<h2>Web Services - SOAP</h2>
+				</section>
+				<section>
+					<h2>Agenda</h2>
+					<ul>
+						<li>Data Driven Application - Development</li>
+						<li>Web Services, APIs, Web Sites</li>
+						<li>Types of Web Services</li>
+						<li>WSDL, UDDI, SOAP</li>
+						<li>Our Development Setup</li>
+						<li>Lets Consume a web service</li>
+						<li>Lets Write a web service</li>
+						<li>Lets test and deploy the service</li>
+						<li>REST</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Data Driven Application - Development</h2>
+					<p>We want to target many clients</p>
+					<p>iOS, Android, Deasktop(Native), Desktop(Web)...</p>
+					<p>Many Frontends and Many Backends - One for each</p>
+					<p>One Backend - Many Frontends</p>
+				</section>
+				<section>
+					<h2>Web Services, Web Sites</h2>
+					<section>
+						<h2>Web sites</h2>
+						<p>Browser requests for a page</p>
+						<p>Rendered Visually (html)- Human Readable</p>
+					</section>
+					<section>
+						<h2>Web services</h2>
+						<p>Browser/Client requests for a service</p>
+						<p>Data (XML/JSON) sent back</p>
+						<p>Client then <strong>parses</strong> the data and presents it visually</p>
+					</section>
+				</section>
+				<section>
+					<h2>Types of Web Services</h2>
+					<p class="fragment">SOAP Web Services</p>
+					<p class="fragment">REST Web Services</p>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+</body>
+
+</html>
